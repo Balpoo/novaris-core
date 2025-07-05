@@ -1,0 +1,8 @@
+openai
+langchain
+llama-index
+sentence-transformers
+pyyaml
+transformers
+huggingface_hub
+pytest
