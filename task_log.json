@@ -1,0 +1,415 @@
+[
+  {
+    "timestamp": "2025-07-06 22:09:33",
+    "task": "Fix login bug in user_auth.py",
+    "result": "\ud83d\udc68\u200d\ud83d\udcbb [CodeAgent] Attempted code fix / improvement for: 'Fix login bug in user_auth.py'",
+    "confidence": 0.87,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:09:33",
+    "task": "Plan a YouTube content calendar for a cooking channel",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Plan a YouTube content calendar for a cooking channel'",
+    "confidence": 0.7,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:09:33",
+    "task": "Research latest trends in men's wedding fashion",
+    "result": "\ud83d\udd0d [ResearchAgent] Conducted search & returned insights for: 'Research latest trends in men's wedding fashion'",
+    "confidence": 0.74,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:09:33",
+    "task": "Write a motivational quote in Dr. APJ Abdul Kalam\u2019s style",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Write a motivational quote in Dr. APJ Abdul Kalam\u2019s style'",
+    "confidence": 0.91,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:09:33",
+    "task": "Optimize Instagram sales funnel for a fashion brand",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Optimize Instagram sales funnel for a fashion brand'",
+    "confidence": 0.8,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:16:16",
+    "task": "Fix login bug in user_auth.py",
+    "result": "\ud83d\udc68\u200d\ud83d\udcbb [CodeAgent] Attempted code fix / improvement for: 'Fix login bug in user_auth.py'",
+    "confidence": 0.75,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:16:16",
+    "task": "Plan a YouTube content calendar for a cooking channel",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Plan a YouTube content calendar for a cooking channel'",
+    "confidence": 0.91,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:16:16",
+    "task": "Research latest trends in men's wedding fashion",
+    "result": "\ud83d\udd0d [ResearchAgent] Conducted search & returned insights for: 'Research latest trends in men's wedding fashion'",
+    "confidence": 0.95,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:16:16",
+    "task": "Write a motivational quote in Dr. APJ Abdul Kalam\u2019s style",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Write a motivational quote in Dr. APJ Abdul Kalam\u2019s style'",
+    "confidence": 0.93,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:16:16",
+    "task": "Optimize Instagram sales funnel for a fashion brand",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Optimize Instagram sales funnel for a fashion brand'",
+    "confidence": 0.82,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:16:24",
+    "task": "Fix login bug in user_auth.py",
+    "result": "\ud83d\udc68\u200d\ud83d\udcbb [CodeAgent] Attempted code fix / improvement for: 'Fix login bug in user_auth.py'",
+    "confidence": 0.93,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:16:24",
+    "task": "Plan a YouTube content calendar for a cooking channel",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Plan a YouTube content calendar for a cooking channel'",
+    "confidence": 0.94,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:16:24",
+    "task": "Research latest trends in men's wedding fashion",
+    "result": "\ud83d\udd0d [ResearchAgent] Conducted search & returned insights for: 'Research latest trends in men's wedding fashion'",
+    "confidence": 0.95,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:16:24",
+    "task": "Write a motivational quote in Dr. APJ Abdul Kalam\u2019s style",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Write a motivational quote in Dr. APJ Abdul Kalam\u2019s style'",
+    "confidence": 0.74,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:16:24",
+    "task": "Optimize Instagram sales funnel for a fashion brand",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Optimize Instagram sales funnel for a fashion brand'",
+    "confidence": 0.85,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:23:47",
+    "task": "Research trending Instagram reel formats for festive campaigns",
+    "result": "\ud83d\udd0d [ResearchAgent] Conducted search & returned insights for: 'Research trending Instagram reel formats for festive campaigns'",
+    "confidence": 0.7,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:23:47",
+    "task": "Plan content calendar for Ganesh Chaturthi (7 days)",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Plan content calendar for Ganesh Chaturthi (7 days)'",
+    "confidence": 0.8,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:23:47",
+    "task": "Generate 3 reels and 3 stories using brand tone",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Generate 3 reels and 3 stories using brand tone'",
+    "confidence": 0.93,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:23:47",
+    "task": "Write captions and festive hashtags",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Write captions and festive hashtags'",
+    "confidence": 0.73,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:23:47",
+    "task": "Schedule posts and set up reminders",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Schedule posts and set up reminders'",
+    "confidence": 0.87,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:23:47",
+    "task": "Monitor engagement and prepare insights report",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Monitor engagement and prepare insights report'",
+    "confidence": 0.93,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:23:47",
+    "task": "Define theme and episode flow",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Define theme and episode flow'",
+    "confidence": 0.79,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:23:47",
+    "task": "Research similar successful channels",
+    "result": "\ud83d\udd0d [ResearchAgent] Conducted search & returned insights for: 'Research similar successful channels'",
+    "confidence": 0.76,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:23:47",
+    "task": "Script intro + outro",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Script intro + outro'",
+    "confidence": 0.75,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:23:47",
+    "task": "Design thumbnail templates",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Design thumbnail templates\n\n[Web Hint]: [WebAgent] Found supporting information online for: 'Design thumbnail templates''",
+    "confidence": 0.85,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 22:23:47",
+    "task": "Create upload schedule and checklist",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Create upload schedule and checklist'",
+    "confidence": 0.95,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:28:51",
+    "task": "Research trending Instagram reel formats for festive campaigns",
+    "result": "\ud83d\udd0d [ResearchAgent] Conducted search & returned insights for: 'Research trending Instagram reel formats for festive campaigns'",
+    "confidence": 0.94,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:28:51",
+    "task": "Plan content calendar for Ganesh Chaturthi (7 days)",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Plan content calendar for Ganesh Chaturthi (7 days)'",
+    "confidence": 0.86,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:28:51",
+    "task": "Generate 3 reels and 3 stories using brand tone",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Generate 3 reels and 3 stories using brand tone'",
+    "confidence": 0.82,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:28:51",
+    "task": "Write captions and festive hashtags",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Write captions and festive hashtags'",
+    "confidence": 0.84,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:28:51",
+    "task": "Schedule posts and set up reminders",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Schedule posts and set up reminders'",
+    "confidence": 0.94,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:28:51",
+    "task": "Monitor engagement and prepare insights report",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Monitor engagement and prepare insights report'",
+    "confidence": 0.94,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:28:51",
+    "task": "Define theme and episode flow",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Define theme and episode flow'",
+    "confidence": 0.7,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:28:51",
+    "task": "Research similar successful channels",
+    "result": "\ud83d\udd0d [ResearchAgent] Conducted search & returned insights for: 'Research similar successful channels'",
+    "confidence": 0.71,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:28:51",
+    "task": "Script intro + outro",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Script intro + outro'",
+    "confidence": 0.77,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:28:51",
+    "task": "Design thumbnail templates",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Design thumbnail templates'",
+    "confidence": 0.74,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:28:51",
+    "task": "Create upload schedule and checklist",
+    "result": "Fallback after retries + Web",
+    "confidence": 0.62,
+    "success": false
+  },
+  {
+    "timestamp": "2025-07-06 23:35:26",
+    "task": "Research trending Instagram reel formats for festive campaigns",
+    "result": "\ud83d\udd0d [ResearchAgent] Conducted search & returned insights for: 'Research trending Instagram reel formats for festive campaigns\n\n[Web Hint]: [WebAgent] Found supporting information online for: 'Research trending Instagram reel formats for festive campaigns''",
+    "confidence": 0.79,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:35:26",
+    "task": "Schedule posts and set up reminders",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Schedule posts and set up reminders\n\n[Web Hint]: [WebAgent] Found supporting information online for: 'Schedule posts and set up reminders''",
+    "confidence": 0.8,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:35:26",
+    "task": "Research similar successful channels",
+    "result": "\ud83d\udd0d [ResearchAgent] Conducted search & returned insights for: 'Research similar successful channels'",
+    "confidence": 0.72,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:35:26",
+    "task": "Create upload schedule and checklist",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Create upload schedule and checklist'",
+    "confidence": 0.87,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:35:26",
+    "task": "Plan content calendar for Ganesh Chaturthi (7 days)",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Plan content calendar for Ganesh Chaturthi (7 days)'",
+    "confidence": 0.73,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:35:26",
+    "task": "Generate 3 reels and 3 stories using brand tone",
+    "result": "Fallback after retries + Web",
+    "confidence": 0.56,
+    "success": false
+  },
+  {
+    "timestamp": "2025-07-06 23:35:26",
+    "task": "Write captions and festive hashtags",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Write captions and festive hashtags'",
+    "confidence": 0.78,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:35:26",
+    "task": "Monitor engagement and prepare insights report",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Monitor engagement and prepare insights report\n\n[Web Hint]: [WebAgent] Found supporting information online for: 'Monitor engagement and prepare insights report''",
+    "confidence": 0.79,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:35:26",
+    "task": "Define theme and episode flow",
+    "result": "Fallback after retries + Web",
+    "confidence": 0.56,
+    "success": false
+  },
+  {
+    "timestamp": "2025-07-06 23:35:26",
+    "task": "Script intro + outro",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Script intro + outro'",
+    "confidence": 0.77,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:35:26",
+    "task": "Design thumbnail templates",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Design thumbnail templates\n\n[Web Hint]: [WebAgent] Found supporting information online for: 'Design thumbnail templates''",
+    "confidence": 0.88,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:42:23",
+    "task": "Research trending Instagram reel formats for festive campaigns",
+    "result": "\ud83d\udd0d [ResearchAgent] Conducted search & returned insights for: 'Research trending Instagram reel formats for festive campaigns'",
+    "confidence": 0.81,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:42:23",
+    "task": "Schedule posts and set up reminders",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Schedule posts and set up reminders'",
+    "confidence": 0.75,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:42:24",
+    "task": "Research similar successful channels",
+    "result": "\ud83d\udd0d [ResearchAgent] Conducted search & returned insights for: 'Research similar successful channels\n\n[Web Hint]: [WebAgent] Found supporting information online for: 'Research similar successful channels''",
+    "confidence": 0.84,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:42:24",
+    "task": "Create upload schedule and checklist",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Create upload schedule and checklist'",
+    "confidence": 0.8,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:42:24",
+    "task": "Plan content calendar for Ganesh Chaturthi (7 days)",
+    "result": "\ud83e\udde9 [PlanningAgent] Created structured plan/calendar for: 'Plan content calendar for Ganesh Chaturthi (7 days)'",
+    "confidence": 0.93,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:42:24",
+    "task": "Generate 3 reels and 3 stories using brand tone",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Generate 3 reels and 3 stories using brand tone'",
+    "confidence": 0.82,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:42:24",
+    "task": "Write captions and festive hashtags",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Write captions and festive hashtags\n\n[Web Hint]: [WebAgent] Found supporting information online for: 'Write captions and festive hashtags''",
+    "confidence": 0.72,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:42:24",
+    "task": "Monitor engagement and prepare insights report",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Monitor engagement and prepare insights report'",
+    "confidence": 0.78,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:42:24",
+    "task": "Define theme and episode flow",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Define theme and episode flow\n\n[Web Hint]: [WebAgent] Found supporting information online for: 'Define theme and episode flow''",
+    "confidence": 0.91,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:42:24",
+    "task": "Script intro + outro",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Script intro + outro'",
+    "confidence": 0.83,
+    "success": true
+  },
+  {
+    "timestamp": "2025-07-06 23:42:24",
+    "task": "Design thumbnail templates",
+    "result": "\ud83d\udcdd [ContentAgent] Created high-quality text for: 'Design thumbnail templates'",
+    "confidence": 0.82,
+    "success": true
+  }
+]

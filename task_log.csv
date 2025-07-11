@@ -1,0 +1,76 @@
+timestamp,task,result,confidence,success
+2025-07-06 22:09:33,Fix login bug in user_auth.py,👨‍💻 [CodeAgent] Attempted code fix / improvement for: 'Fix login bug in user_auth.py',0.87,True
+2025-07-06 22:09:33,Plan a YouTube content calendar for a cooking channel,🧩 [PlanningAgent] Created structured plan/calendar for: 'Plan a YouTube content calendar for a cooking channel',0.7,True
+2025-07-06 22:09:33,Research latest trends in men's wedding fashion,🔍 [ResearchAgent] Conducted search & returned insights for: 'Research latest trends in men's wedding fashion',0.74,True
+2025-07-06 22:09:33,Write a motivational quote in Dr. APJ Abdul Kalam’s style,📝 [ContentAgent] Created high-quality text for: 'Write a motivational quote in Dr. APJ Abdul Kalam’s style',0.91,True
+2025-07-06 22:09:33,Optimize Instagram sales funnel for a fashion brand,📝 [ContentAgent] Created high-quality text for: 'Optimize Instagram sales funnel for a fashion brand',0.8,True
+2025-07-06 22:16:16,Fix login bug in user_auth.py,👨‍💻 [CodeAgent] Attempted code fix / improvement for: 'Fix login bug in user_auth.py',0.75,True
+2025-07-06 22:16:16,Plan a YouTube content calendar for a cooking channel,🧩 [PlanningAgent] Created structured plan/calendar for: 'Plan a YouTube content calendar for a cooking channel',0.91,True
+2025-07-06 22:16:16,Research latest trends in men's wedding fashion,🔍 [ResearchAgent] Conducted search & returned insights for: 'Research latest trends in men's wedding fashion',0.95,True
+2025-07-06 22:16:16,Write a motivational quote in Dr. APJ Abdul Kalam’s style,📝 [ContentAgent] Created high-quality text for: 'Write a motivational quote in Dr. APJ Abdul Kalam’s style',0.93,True
+2025-07-06 22:16:16,Optimize Instagram sales funnel for a fashion brand,📝 [ContentAgent] Created high-quality text for: 'Optimize Instagram sales funnel for a fashion brand',0.82,True
+2025-07-06 22:16:24,Fix login bug in user_auth.py,👨‍💻 [CodeAgent] Attempted code fix / improvement for: 'Fix login bug in user_auth.py',0.93,True
+2025-07-06 22:16:24,Plan a YouTube content calendar for a cooking channel,🧩 [PlanningAgent] Created structured plan/calendar for: 'Plan a YouTube content calendar for a cooking channel',0.94,True
+2025-07-06 22:16:24,Research latest trends in men's wedding fashion,🔍 [ResearchAgent] Conducted search & returned insights for: 'Research latest trends in men's wedding fashion',0.95,True
+2025-07-06 22:16:24,Write a motivational quote in Dr. APJ Abdul Kalam’s style,📝 [ContentAgent] Created high-quality text for: 'Write a motivational quote in Dr. APJ Abdul Kalam’s style',0.74,True
+2025-07-06 22:16:24,Optimize Instagram sales funnel for a fashion brand,📝 [ContentAgent] Created high-quality text for: 'Optimize Instagram sales funnel for a fashion brand',0.85,True
+2025-07-06 22:23:47,Research trending Instagram reel formats for festive campaigns,🔍 [ResearchAgent] Conducted search & returned insights for: 'Research trending Instagram reel formats for festive campaigns',0.7,True
+2025-07-06 22:23:47,Plan content calendar for Ganesh Chaturthi (7 days),🧩 [PlanningAgent] Created structured plan/calendar for: 'Plan content calendar for Ganesh Chaturthi (7 days)',0.8,True
+2025-07-06 22:23:47,Generate 3 reels and 3 stories using brand tone,📝 [ContentAgent] Created high-quality text for: 'Generate 3 reels and 3 stories using brand tone',0.93,True
+2025-07-06 22:23:47,Write captions and festive hashtags,📝 [ContentAgent] Created high-quality text for: 'Write captions and festive hashtags',0.73,True
+2025-07-06 22:23:47,Schedule posts and set up reminders,🧩 [PlanningAgent] Created structured plan/calendar for: 'Schedule posts and set up reminders',0.87,True
+2025-07-06 22:23:47,Monitor engagement and prepare insights report,📝 [ContentAgent] Created high-quality text for: 'Monitor engagement and prepare insights report',0.93,True
+2025-07-06 22:23:47,Define theme and episode flow,📝 [ContentAgent] Created high-quality text for: 'Define theme and episode flow',0.79,True
+2025-07-06 22:23:47,Research similar successful channels,🔍 [ResearchAgent] Conducted search & returned insights for: 'Research similar successful channels',0.76,True
+2025-07-06 22:23:47,Script intro + outro,📝 [ContentAgent] Created high-quality text for: 'Script intro + outro',0.75,True
+2025-07-06 22:23:47,Design thumbnail templates,"📝 [ContentAgent] Created high-quality text for: 'Design thumbnail templates
+
+[Web Hint]: [WebAgent] Found supporting information online for: 'Design thumbnail templates''",0.85,True
+2025-07-06 22:23:47,Create upload schedule and checklist,🧩 [PlanningAgent] Created structured plan/calendar for: 'Create upload schedule and checklist',0.95,True
+2025-07-06 23:28:51,Research trending Instagram reel formats for festive campaigns,🔍 [ResearchAgent] Conducted search & returned insights for: 'Research trending Instagram reel formats for festive campaigns',0.94,True
+2025-07-06 23:28:51,Plan content calendar for Ganesh Chaturthi (7 days),🧩 [PlanningAgent] Created structured plan/calendar for: 'Plan content calendar for Ganesh Chaturthi (7 days)',0.86,True
+2025-07-06 23:28:51,Generate 3 reels and 3 stories using brand tone,📝 [ContentAgent] Created high-quality text for: 'Generate 3 reels and 3 stories using brand tone',0.82,True
+2025-07-06 23:28:51,Write captions and festive hashtags,📝 [ContentAgent] Created high-quality text for: 'Write captions and festive hashtags',0.84,True
+2025-07-06 23:28:51,Schedule posts and set up reminders,🧩 [PlanningAgent] Created structured plan/calendar for: 'Schedule posts and set up reminders',0.94,True
+2025-07-06 23:28:51,Monitor engagement and prepare insights report,📝 [ContentAgent] Created high-quality text for: 'Monitor engagement and prepare insights report',0.94,True
+2025-07-06 23:28:51,Define theme and episode flow,📝 [ContentAgent] Created high-quality text for: 'Define theme and episode flow',0.7,True
+2025-07-06 23:28:51,Research similar successful channels,🔍 [ResearchAgent] Conducted search & returned insights for: 'Research similar successful channels',0.71,True
+2025-07-06 23:28:51,Script intro + outro,📝 [ContentAgent] Created high-quality text for: 'Script intro + outro',0.77,True
+2025-07-06 23:28:51,Design thumbnail templates,📝 [ContentAgent] Created high-quality text for: 'Design thumbnail templates',0.74,True
+2025-07-06 23:28:51,Create upload schedule and checklist,Fallback after retries + Web,0.62,False
+2025-07-06 23:35:26,Research trending Instagram reel formats for festive campaigns,"🔍 [ResearchAgent] Conducted search & returned insights for: 'Research trending Instagram reel formats for festive campaigns
+
+[Web Hint]: [WebAgent] Found supporting information online for: 'Research trending Instagram reel formats for festive campaigns''",0.79,True
+2025-07-06 23:35:26,Schedule posts and set up reminders,"🧩 [PlanningAgent] Created structured plan/calendar for: 'Schedule posts and set up reminders
+
+[Web Hint]: [WebAgent] Found supporting information online for: 'Schedule posts and set up reminders''",0.8,True
+2025-07-06 23:35:26,Research similar successful channels,🔍 [ResearchAgent] Conducted search & returned insights for: 'Research similar successful channels',0.72,True
+2025-07-06 23:35:26,Create upload schedule and checklist,🧩 [PlanningAgent] Created structured plan/calendar for: 'Create upload schedule and checklist',0.87,True
+2025-07-06 23:35:26,Plan content calendar for Ganesh Chaturthi (7 days),🧩 [PlanningAgent] Created structured plan/calendar for: 'Plan content calendar for Ganesh Chaturthi (7 days)',0.73,True
+2025-07-06 23:35:26,Generate 3 reels and 3 stories using brand tone,Fallback after retries + Web,0.56,False
+2025-07-06 23:35:26,Write captions and festive hashtags,📝 [ContentAgent] Created high-quality text for: 'Write captions and festive hashtags',0.78,True
+2025-07-06 23:35:26,Monitor engagement and prepare insights report,"📝 [ContentAgent] Created high-quality text for: 'Monitor engagement and prepare insights report
+
+[Web Hint]: [WebAgent] Found supporting information online for: 'Monitor engagement and prepare insights report''",0.79,True
+2025-07-06 23:35:26,Define theme and episode flow,Fallback after retries + Web,0.56,False
+2025-07-06 23:35:26,Script intro + outro,📝 [ContentAgent] Created high-quality text for: 'Script intro + outro',0.77,True
+2025-07-06 23:35:26,Design thumbnail templates,"📝 [ContentAgent] Created high-quality text for: 'Design thumbnail templates
+
+[Web Hint]: [WebAgent] Found supporting information online for: 'Design thumbnail templates''",0.88,True
+2025-07-06 23:42:23,Research trending Instagram reel formats for festive campaigns,🔍 [ResearchAgent] Conducted search & returned insights for: 'Research trending Instagram reel formats for festive campaigns',0.81,True
+2025-07-06 23:42:23,Schedule posts and set up reminders,🧩 [PlanningAgent] Created structured plan/calendar for: 'Schedule posts and set up reminders',0.75,True
+2025-07-06 23:42:24,Research similar successful channels,"🔍 [ResearchAgent] Conducted search & returned insights for: 'Research similar successful channels
+
+[Web Hint]: [WebAgent] Found supporting information online for: 'Research similar successful channels''",0.84,True
+2025-07-06 23:42:24,Create upload schedule and checklist,🧩 [PlanningAgent] Created structured plan/calendar for: 'Create upload schedule and checklist',0.8,True
+2025-07-06 23:42:24,Plan content calendar for Ganesh Chaturthi (7 days),🧩 [PlanningAgent] Created structured plan/calendar for: 'Plan content calendar for Ganesh Chaturthi (7 days)',0.93,True
+2025-07-06 23:42:24,Generate 3 reels and 3 stories using brand tone,📝 [ContentAgent] Created high-quality text for: 'Generate 3 reels and 3 stories using brand tone',0.82,True
+2025-07-06 23:42:24,Write captions and festive hashtags,"📝 [ContentAgent] Created high-quality text for: 'Write captions and festive hashtags
+
+[Web Hint]: [WebAgent] Found supporting information online for: 'Write captions and festive hashtags''",0.72,True
+2025-07-06 23:42:24,Monitor engagement and prepare insights report,📝 [ContentAgent] Created high-quality text for: 'Monitor engagement and prepare insights report',0.78,True
+2025-07-06 23:42:24,Define theme and episode flow,"📝 [ContentAgent] Created high-quality text for: 'Define theme and episode flow
+
+[Web Hint]: [WebAgent] Found supporting information online for: 'Define theme and episode flow''",0.91,True
+2025-07-06 23:42:24,Script intro + outro,📝 [ContentAgent] Created high-quality text for: 'Script intro + outro',0.83,True
+2025-07-06 23:42:24,Design thumbnail templates,📝 [ContentAgent] Created high-quality text for: 'Design thumbnail templates',0.82,True

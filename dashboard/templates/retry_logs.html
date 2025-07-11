@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Retry Logs</title></head>
+<body>
+    <h2>📊 Retry Insights Dashboard</h2>
+    <table border="1">
+        <tr><th>ID</th><th>Task</th><th>Result</th><th>Status</th><th>Retries</th><th>Timestamp</th></tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log[0] }}</td>
+            <td>{{ log[1] }}</td>
+            <td>{{ log[2] }}</td>
+            <td>{{ log[3] }}</td>
+            <td>{{ log[4] }}</td>
+            <td>{{ log[5] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

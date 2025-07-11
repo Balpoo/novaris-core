@@ -1,0 +1,30 @@
+{
+  "summary": "4 issues found.",
+  "issues": [
+    {
+      "type": "missing_docstring",
+      "object": "AgentCollaborator",
+      "lineno": 7,
+      "suggestion": "Auto-added placeholder docstring."
+    },
+    {
+      "type": "missing_docstring",
+      "object": "__init__",
+      "lineno": 8,
+      "suggestion": "Auto-added placeholder docstring."
+    },
+    {
+      "type": "missing_docstring",
+      "object": "assign_task",
+      "lineno": 12,
+      "suggestion": "Auto-added placeholder docstring."
+    },
+    {
+      "type": "missing_return",
+      "object": "__init__",
+      "lineno": 8,
+      "suggestion": "Auto-added 'return None'."
+    }
+  ],
+  "auto_fixed_code": "from core.executor_agent import ExecutorAgent\nfrom core.reflection_engine import log_execution_result\nfrom core.trust_manager import TrustManager\n\n\nclass AgentCollaborator:\n    \"\"\"TODO: Add docstring\"\"\"\n\n    def __init__(self):\n        \"\"\"TODO: Add docstring\"\"\"\n        self.executor = ExecutorAgent()\n        self.trust = TrustManager()\n        return None\n\n    def assign_task(self, task: dict) ->dict:\n        \"\"\"TODO: Add docstring\"\"\"\n        max_retries = 2\n        attempt = 0\n        result = None\n        while attempt <= max_retries:\n            print(f\"\ud83d\udd01 Attempt {attempt + 1} for task: {task['type']}\")\n            result = self.executor.perform_task(task)\n            log_execution_result(task, result)\n            self.trust.update_trust_score('executor', task['type'], result[\n                'status'] == 'success')\n            if result['status'] == 'success':\n                break\n            attempt += 1\n        return result\n"
+}

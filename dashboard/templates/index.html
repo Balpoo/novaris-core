@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NOVARIS Memory Dashboard</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding: 2rem; background-color: #f9f9f9; }
+    .table thead { background-color: #343a40; color: white; }
+    .confidence { font-weight: bold; }
+    .btn-backup {
+      float: right;
+      background-color: orange;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 10px 20px;
+      text-decoration: none;
+    }
+    .btn-export {
+      float: left;
+      background-color: green;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 10px 20px;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+    .btn-validation {
+      margin: 10px 10px 20px 0;
+    }
+    .error-row {
+      background-color: #ffe6e6;
+      color: #a94442;
+      font-weight: bold;
+    }
+    .filter-toggle {
+      margin-left: 12px;
+    }
+    #summaryStats {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="mb-4">
+    🧠 NOVARIS Memory Dashboard
+    <a href="/export" class="btn-export">📤 Export CSV</a>
+    <a href="/backups" class="btn-backup">🔐 Manual Backup</a>
+    <form method="POST" action="/upload-to-drive" style="display:inline; margin-left: 10px;">
+      <button type="submit" class="btn btn-primary">
+        ☁️ Upload Backup to Google Drive
+      </button>
+    </form>
+  </h1>
+
+  <!-- 🔍 Dynamic CSVE Tools -->
+  <div class="mb-4">
+    <label for="moduleDropdown" class="form-label fw-bold">Run CSVE on a Specific Module:</label>
+    <div class="input-group mb-2" style="max-width: 800px;">
+      <select id="moduleDropdown" class="form-select"></select>
+      <button class="btn btn-primary" onclick="runValidation()">🔍 Validate</button>
+      <button class="btn btn-danger ms-2" onclick="runAll()">📦 Scan All</button>
+      <button class="btn btn-secondary ms-2" onclick="downloadCSVE()">⬇️ Export JSON</button>
+      <button class="btn btn-secondary ms-2" onclick="downloadCSV()">⬇️ Export CSV</button>
+      <div class="form-check form-switch filter-toggle">
+        <input class="form-check-input" type="checkbox" role="switch" id="showOnlyFails" onchange="toggleFilter()">
+        <label class="form-check-label" for="showOnlyFails">Only Fails</label>
+      </div>
+    </div>
+    <div id="progressBar" class="progress d-none">
+      <div class="progress-bar" role="progressbar" style="width: 0%">0%</div>
+    </div>
+    <div id="summaryStats"></div>
+    <div id="csveResult" class="alert alert-info d-none"></div>
+  </div>
+
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Task</th>
+        <th>Agent</th>
+        <th>Confidence</th>
+        <th>Final Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for log in logs %}
+      <tr>
+        <td>{{ log.timestamp }}</td>
+        <td>
+          {% if log.task %}
+            {{ log.task[:60] }}{% if log.task|length > 60 %}...{% endif %}
+          {% else %}
+            N/A
+          {% endif %}
+        </td>
+        <td>{{ log.agent or 'N/A' }}</td>
+        <td class="confidence text-success">
+          {% if log.confidence is not none %}
+            {{ "%.2f"|format(log.confidence) }}
+          {% else %}
+            N/A
+          {% endif %}
+        </td>
+        <td>
+          {% if log.final_result %}
+            {{ log.final_result[:60] }}{% if log.final_result|length > 60 %}...{% endif %}
+          {% else %}
+            N/A
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <script>
+    let lastCSVEResult = null;
+    let filterFailsOnly = false;
+
+    async function loadModules() {
+      const res = await fetch("/modules");
+      const modules = await res.json();
+      const dropdown = document.getElementById("moduleDropdown");
+      dropdown.innerHTML = "";
+      modules.forEach(m => {
+        const opt = document.createElement("option");
+        opt.value = m.name;
+        opt.text = m.label;
+        dropdown.appendChild(opt);
+      });
+    }
+
+    async function runValidation() {
+      setProgress(30);
+      const module = document.getElementById("moduleDropdown").value;
+      const res = await fetch(`/validate/${module}`);
+      setProgress(80);
+      const data = await res.json();
+      lastCSVEResult = data;
+      showCSVE(data);
+      setProgress(100);
+      autoSaveResult("csve_result.json", data);
+    }
+
+    async function runAll() {
+      setProgress(20);
+      const res = await fetch("/validate-all");
+      setProgress(70);
+      const data = await res.json();
+      lastCSVEResult = data;
+      showCSVE(data);
+      setProgress(100);
+      autoSaveResult("csve_result_all.json", data);
+    }
+
+    function setProgress(value) {
+      const bar = document.querySelector("#progressBar");
+      const inner = bar.querySelector(".progress-bar");
+      bar.classList.remove("d-none");
+      inner.style.width = value + "%";
+      inner.innerText = value + "%";
+      if (value === 100) setTimeout(() => bar.classList.add("d-none"), 1000);
+    }
+
+    function showCSVE(data) {
+      const resultDiv = document.getElementById("csveResult");
+      resultDiv.classList.remove("d-none");
+      const formatted = formatCSVEToHTML(data);
+      resultDiv.innerHTML = formatted;
+      updateStats(data);
+    }
+
+    function formatCSVEToHTML(data) {
+      let html = '<table class="table table-bordered">';
+      html += '<thead><tr><th>Check</th><th>Status</th><th>Details</th></tr></thead><tbody>';
+
+      const rows = Array.isArray(data) ? data : Object.entries(data).flatMap(([file, checks]) =>
+        checks.map(row => ({ ...row, file }))
+      );
+
+      rows.forEach(row => {
+        const fail = row.check_passed === false;
+        if (!filterFailsOnly || fail) {
+          html += `<tr class="${fail ? 'error-row' : ''}">`;
+          html += `<td>${row.check || row.file || 'N/A'}</td>`;
+          html += `<td>${fail ? '❌ Fail' : '✅ Pass'}</td>`;
+          html += `<td>${row.issue || '—'}</td>`;
+          html += '</tr>';
+        }
+      });
+      html += '</tbody></table>';
+      return html;
+    }
+
+    function updateStats(data) {
+      const statsDiv = document.getElementById("summaryStats");
+      const rows = Array.isArray(data) ? data : Object.entries(data).flatMap(([file, checks]) => checks);
+      const total = rows.length;
+      const fails = rows.filter(r => r.check_passed === false).length;
+      const pass = total - fails;
+      const percent = total > 0 ? ((pass / total) * 100).toFixed(1) : 0;
+      statsDiv.innerText = `✅ Passed: ${pass} | ❌ Failed: ${fails} | Total: ${total} | Pass %: ${percent}%`;
+    }
+
+    function downloadCSVE() {
+      if (!lastCSVEResult) return alert("No result to export!");
+      const blob = new Blob([JSON.stringify(lastCSVEResult, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "csve_result.json";
+      link.click();
+    }
+
+    function downloadCSV() {
+      if (!lastCSVEResult) return alert("No result to export!");
+      const rows = Array.isArray(lastCSVEResult)
+        ? lastCSVEResult
+        : Object.entries(lastCSVEResult).flatMap(([file, checks]) =>
+            checks.map(row => ({ file, ...row })));
+      const headers = ["file", "check", "check_passed", "issue"];
+      const csvContent = [headers.join(",")].concat(
+        rows.map(row => headers.map(h => JSON.stringify(row[h] || "")).join(","))
+      ).join("\n");
+
+      const blob = new Blob([csvContent], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "csve_result.csv";
+      link.click();
+    }
+
+    function toggleFilter() {
+      filterFailsOnly = document.getElementById("showOnlyFails").checked;
+      if (lastCSVEResult) showCSVE(lastCSVEResult);
+    }
+
+    function autoSaveResult(filename, data) {
+      fetch("/save-csve", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ filename, content: data })
+      }).then(res => res.ok && console.log("✅ Auto-saved to backend"));
+    }
+
+    loadModules();
+  </script>
+</body>
+</html>

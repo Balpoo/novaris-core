@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NOVARIS Log Filter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>🔍 NOVARIS Logs Filter</h1>
+
+    <form method="GET" action="/filters">
+        <label>Search Task:</label>
+        <input type="text" name="q" placeholder="Enter keyword..." value="{{ request.args.get('q', '') }}">
+
+        <label>Status:</label>
+        <select name="status">
+            <option value="">All</option>
+            {% for s in ['pending', 'done', 'error', 'retry'] %}
+                <option value="{{ s }}" {% if request.args.get('status') == s %}selected{% endif %}>{{ s.title() }}</option>
+            {% endfor %}
+        </select>
+
+        <label>Task Type:</label>
+        <select name="task_type">
+            <option value="">All</option>
+            {% for t in ['memory', 'file', 'agent', 'system'] %}
+                <option value="{{ t }}" {% if request.args.get('task_type') == t %}selected{% endif %}>{{ t.title() }}</option>
+            {% endfor %}
+        </select>
+
+        <label>Date From:</label>
+        <input type="date" name="from_date" value="{{ request.args.get('from_date', '') }}">
+
+        <label>Date To:</label>
+        <input type="date" name="to_date" value="{{ request.args.get('to_date', '') }}">
+
+        <button type="submit">Filter</button>
+    </form>
+
+    <hr>
+
+    <h2>📄 Filtered Results ({{ logs|length }})</h2>
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Timestamp</th>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Task Type</th>
+                <th>Agent</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in logs %}
+                <tr>
+                    <td>{{ log.id }}</td>
+                    <td>{{ log.timestamp }}</td>
+                    <td>{{ log.task }}</td>
+                    <td>{{ log.status }}</td>
+                    <td>{{ log.task_type }}</td>
+                    <td>{{ log.agent }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

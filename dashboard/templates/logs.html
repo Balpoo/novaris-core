@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NOVARIS Logs</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+
+    .retry-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .retry-btn:hover {
+      background-color: #0056b3;
+    }
+    .retry-btn:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+    .spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 2px solid #fff;
+      border-top: 2px solid #007bff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-left: 5px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h2>🧠 NOVARIS Task Logs</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Task</th>
+        <th>Agent</th>
+        <th>Result</th>
+        <th>Status</th>
+        <th>Confidence</th>
+        <th>Final Result</th>
+        <th>Timestamp</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for log in logs %}
+      <tr>
+        <td>{{ log[0] }}</td>
+        <td>{{ log[1] }}</td>
+        <td>{{ log[2] }}</td>
+        <td>{{ log[3] }}</td>
+        <td id="status-{{ log[0] }}">{{ log[5] }}</td>
+        <td id="confidence-{{ log[0] }}">{{ log[6] or '-' }}</td>
+        <td id="final-{{ log[0] }}">{{ log[7] or '-' }}</td>
+        <td>{{ log[4] }}</td>
+        <td>
+          <button class="retry-btn"
+                  data-id="{{ log[0] }}"
+                  {% if log[5] == 'success' %}disabled{% endif %}>
+            🔁 Retry
+          </button>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <script>
+    document.querySelectorAll(".retry-btn").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const id = btn.dataset.id;
+        const statusCell = document.getElementById("status-" + id);
+        const confidenceCell = document.getElementById("confidence-" + id);
+        const finalResultCell = document.getElementById("final-" + id);
+
+        btn.disabled = true;
+        btn.innerHTML = '⏳ Retrying <span class="spinner"></span>';
+        statusCell.textContent = "retrying";
+
+        try {
+          const res = await fetch("/retry-task", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id: id })
+          });
+
+          const data = await res.json();
+
+          if (data.status === "success") {
+            statusCell.textContent = "success";
+            confidenceCell.textContent = data.confidence;
+            finalResultCell.textContent = data.final_result;
+            btn.innerHTML = "✅ Retried";
+          } else {
+            statusCell.textContent = "failed";
+            finalResultCell.textContent = data.error || "Retry failed";
+            btn.innerHTML = "🔁 Retry";
+            btn.disabled = false;
+          }
+        } catch (err) {
+          statusCell.textContent = "error";
+          finalResultCell.textContent = err.message;
+          btn.innerHTML = "🔁 Retry";
+          btn.disabled = false;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

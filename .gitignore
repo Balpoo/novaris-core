@@ -1,4 +1,5 @@
 __pycache__/
-.env
 *.pyc
-.vscode/
+.env
+memory_store/
+node_modules/

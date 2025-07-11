@@ -1,0 +1,16 @@
+{
+  "reflection": {
+    "role": "Self-Learning",
+    "description": "Logs and reflects on each dev day.",
+    "registered_on": "2025-07-08 22:24:12.179880",
+    "last_active": "2025-07-09 00:54:38.733056",
+    "status": "active"
+  },
+  "proactive": {
+    "role": "System Monitor",
+    "description": "Watches for system state changes proactively.",
+    "registered_on": "2025-07-09 11:27:05.557624",
+    "last_active": "2025-07-09 15:26:38.916897",
+    "status": "active"
+  }
+}

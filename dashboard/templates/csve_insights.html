@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSVE Insights</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/file-saver"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding: 2rem; background: #f0f4f8; }
+    .card { margin-bottom: 2rem; }
+    .filters { margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+  <h1 class="mb-4">📊 CSVE Insights</h1>
+
+  <div id="spikeAlert" class="alert alert-danger d-none" role="alert">
+    ⚠️ Spike Detected! An unusually high number of validations occurred on <strong id="spikeDate"></strong>. Investigate anomalies in the Daily Trend chart below.
+  </div>
+
+  <div class="filters row align-items-end">
+    <div class="col-md-3">
+      <label class="form-label">📅 Start Date</label>
+      <input type="date" id="startDate" class="form-control">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">📅 End Date</label>
+      <input type="date" id="endDate" class="form-control">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">🏷 Filter Tag</label>
+      <input type="text" id="filterTag" class="form-control" placeholder="e.g. retry">
+    </div>
+    <div class="col-md-3">
+      <button class="btn btn-primary w-100" onclick="loadInsights()">🔍 Apply Filters</button>
+    </div>
+  </div>
+
+  <div class="form-check form-switch mb-4">
+    <input class="form-check-input" type="checkbox" id="toggleRefresh" checked onchange="autoRefresh = this.checked">
+    <label class="form-check-label" for="toggleRefresh">🔁 Auto-refresh every 30s</label>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between">
+          ✅ Pass vs ❌ Fail
+          <button class="btn btn-sm btn-outline-secondary" onclick="exportChart(resultPie, 'pass_vs_fail.csv')">⬇ Export</button>
+        </div>
+        <div class="card-body">
+          <canvas id="resultPie"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6" id="trendSection">
+      <div class="card">
+        <div class="card-header d-flex justify-content-between">
+          📈 Files Validated per Day
+          <button class="btn btn-sm btn-outline-secondary" onclick="exportChart(dailyTrend, 'daily_trend.csv')">⬇ Export</button>
+        </div>
+        <div class="card-body">
+          <canvas id="dailyTrend"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header d-flex justify-content-between">
+      🏷 Files by Tags
+      <button class="btn btn-sm btn-outline-secondary" onclick="exportChart(tagBar, 'tag_counts.csv')">⬇ Export</button>
+    </div>
+    <div class="card-body">
+      <canvas id="tagBar"></canvas>
+    </div>
+  </div>
+
+  <script>
+    let resultPie, dailyTrend, tagBar;
+
+    function buildQuery() {
+      const start = document.getElementById('startDate').value;
+      const end = document.getElementById('endDate').value;
+      const tag = document.getElementById('filterTag').value.trim();
+      const params = new URLSearchParams();
+      if (start) params.set('start', start);
+      if (end) params.set('end', end);
+      if (tag) params.set('tag', tag);
+      return params.toString();
+    }
+
+    async function loadInsights() {
+      const q = buildQuery();
+      const res = await fetch(`/csve-insights-data?${q}`);
+      const data = await res.json();
+
+      // 🔴 Show anomaly alert if spike
+      const spikeDiv = document.getElementById("spikeAlert");
+      if (data.spike) {
+        // 📬 Notify server to email (only first time per load)
+        fetch('/csve-email-alert', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ spike_date: data.spike_date })
+        });
+        document.getElementById("spikeDate").innerText = data.spike_date;
+        spikeDiv.classList.remove("d-none");
+        document.getElementById("trendSection").scrollIntoView({ behavior: 'smooth' });
+      } else {
+        spikeDiv.classList.add("d-none");
+      }
+
+      if (resultPie) resultPie.destroy();
+      if (dailyTrend) dailyTrend.destroy();
+      if (tagBar) tagBar.destroy();
+
+      resultPie = new Chart(document.getElementById('resultPie'), {
+        type: 'doughnut',
+        data: {
+          labels: ['✅ Passed', '❌ Failed'],
+          datasets: [{
+            data: [data.pass, data.fail],
+            backgroundColor: ['#28a745', '#dc3545']
+          }]
+        }
+      });
+
+      dailyTrend = new Chart(document.getElementById('dailyTrend'), {
+        type: 'line',
+        data: {
+          labels: data.trend.dates,
+          datasets: [
+            {
+              label: 'Files Validated',
+              data: data.trend.counts,
+              borderColor: '#007bff',
+              fill: false
+            },
+            data.spike ? {
+              label: 'Anomaly Threshold',
+              data: data.trend.dates.map(() => Math.max(...data.trend.counts) / 2),
+              borderColor: 'red',
+              borderDash: [5, 5],
+              fill: false,
+              pointRadius: 0
+            } : null
+          ].filter(Boolean)
+        },
+            borderColor: '#007bff',
+            fill: false
+          }]
+        }
+      });
+
+      tagBar = new Chart(document.getElementById('tagBar'), {
+        type: 'bar',
+        data: {
+          labels: data.tags.map(t => t.tag),
+          datasets: [{
+            label: 'Files with Tag',
+            data: data.tags.map(t => t.count),
+            backgroundColor: '#ffc107'
+          }]
+        }
+      });
+    }
+
+    function exportChart(chart, filename) {
+      const labels = chart.data.labels;
+      const datasets = chart.data.datasets;
+      let csv = 'Label,' + datasets.map(d => d.label || '').join(',') + '\n';
+      for (let i = 0; i < labels.length; i++) {
+        const row = [labels[i]];
+        datasets.forEach(d => row.push(d.data[i]));
+        csv += row.join(',') + '\n';
+      }
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      saveAs(blob, filename);
+    }
+
+    loadInsights();
+
+let autoRefresh = true;
+setInterval(() => {
+  if (autoRefresh) loadInsights();
+}, 30000); // 🔁 Refresh every 30s
+  </script>
+</body>
+</html>
