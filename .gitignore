@@ -2,4 +2,4 @@ __pycache__/
 *.pyc
 .env
 memory_store/
-node_modules/
+node_modules/"dashboard/secrets/service_account.json" 
